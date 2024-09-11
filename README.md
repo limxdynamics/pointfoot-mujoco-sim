@@ -2,60 +2,73 @@
 
 
 
-## 1. 搭建开发环境
-
-我们建议在 Ubuntu 20.04 及以上版本上搭建基于 MuJoCo 的算法仿真开发环境。请在 Bash 终端中运行以下命令，以安装所需的依赖库：
-
-```
-sudo apt update
-sudo apt install -y libglfw3 libglfw3-dev cmake build-essential
-```
-
-
-
-## 2. 编译运行仿真
+## 1. 运行仿真
 
 - 打开一个 Bash 终端。
 
 - 下载 MuJoCo 仿真器代码：
 
   ```
-  git clone https://github.com/limxdynamics/pointfoot-mujoco-sim.git
+  git clone --recurse https://github.com/limxdynamics/pointfoot-mujoco-sim.git
   ```
 
-- 编译 MuJoCo 仿真器：
+- 安装运动控制开发库：
 
-  ```
-  cd pointfoot-mujoco-sim
-  mkdir -p build
-  cd build
-  cmake ..
-  make
-  ```
+  - Linux x86_64 环境
 
+    ```
+    pip install pointfoot-mujoco-sim/pointfoot-sdk-lowlevel/python3/amd64/limxsdk-*-py3-none-any.whl
+    ```
+
+  - Linux aarch64 环境
+
+    ```
+    pip install pointfoot-mujoco-sim/pointfoot-sdk-lowlevel/python3/aarch64/limxsdk-*-py3-none-any.whl
+    ```
+
+- 设置机器人类型
+
+  - 通过 Shell 命令 `tree -L 1 pointfoot-mujoco-sim/robot-description/pointfoot` 列出可用的机器人类型：
+  
+    ```
+    limx@limx:~$ tree -L 1 pointfoot-mujoco-sim/robot-description/pointfoot
+    pointfoot-mujoco-sim/robot-description/pointfoot
+    ├── PF_P441A
+    ├── PF_P441B
+    ├── PF_P441C
+    └── PF_P441C2
+    
+    ```
+  
+  - 以 `PF_P441A` 为例，设置机器人类型：
+  
+    ```
+    echo 'export ROBOT_TYPE=PF_P441A' >> ~/.bashrc && source ~/.bashrc
+    ```
+  
 - 运行 MuJoCo 仿真器：
 
   ```
-  cd build
-  ./pointfoot_mujoco_sim
+  python pointfoot-mujoco-sim/simulator.py
   ```
-
   
 
-## 3. 编译运行控制
+
+## 2. 编译运行控制
 
 - 打开一个 Bash 终端。
 
-- 下载控制器SDK示例代码：
+- 安装编译所需环境
 
   ```
-  git clone https://github.com/limxdynamics/pointfoot-sdk-lowlevel.git
+  sudo apt update
+  sudo apt install -y cmake build-essential
   ```
 
 - 编译控制器SDK示例：
 
   ```
-  cd pointfoot-sdk-lowlevel
+  cd pointfoot-mujoco-sim/pointfoot-sdk-lowlevel
   mkdir -p build
   cd build
   cmake ..
@@ -65,32 +78,12 @@ sudo apt install -y libglfw3 libglfw3-dev cmake build-essential
 - 运行控制器SDK示例：
 
   ```
-  cd build
   ./examples/pf_groupJoints_move
   ```
 
 
 
-
-## 4. 运行可视化工具
-
-- 打开一个 Bash 终端。
-
-- 运行可视化工具
-
-  ```
-  cd pointfoot-mujoco-sim/build
-  ./pointfoot_mujoco_vis 127.0.0.1  # 机器人实际的IP地址
-  ```
-
-
-
-## 5. 仿真展示
+## 3. 仿真展示
 
 ![](doc/simulator.gif)
 
-
-
-## 6. 可视化展示
-
-![](doc/visualizer.gif)
