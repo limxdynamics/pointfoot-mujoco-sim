@@ -40,7 +40,7 @@
     
     ```
   
-  - 以 `PF_P441A` 为例，设置机器人类型：
+  - 以`PF_P441C`（请根据实际机器人类型进行替换）为例，设置机器人型号类型：
   
     ```
     echo 'export ROBOT_TYPE=PF_P441A' >> ~/.bashrc && source ~/.bashrc
