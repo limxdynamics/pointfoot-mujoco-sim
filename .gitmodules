@@ -4,3 +4,7 @@
 [submodule "pointfoot-sdk-lowlevel"]
 	path = pointfoot-sdk-lowlevel
 	url = https://github.com/limxdynamics/pointfoot-sdk-lowlevel.git
+[submodule "robot-joystick"]
+	path = robot-joystick
+	url = https://github.com/limxdynamics/robot-joystick.git
+	branch = main
