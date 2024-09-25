@@ -4,3 +4,6 @@
 [submodule "robot-description"]
 	path = robot-description
 	url = https://github.com/limxdynamics/robot-description.git
+[submodule "robot-joystick"]
+	path = robot-joystick
+	url = https://github.com/limxdynamics/robot-joystick.git
