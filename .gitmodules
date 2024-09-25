@@ -7,3 +7,4 @@
 [submodule "robot-joystick"]
 	path = robot-joystick
 	url = https://github.com/limxdynamics/robot-joystick.git
+	branch = main
