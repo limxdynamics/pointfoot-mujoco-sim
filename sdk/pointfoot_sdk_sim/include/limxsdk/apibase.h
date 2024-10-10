@@ -124,11 +124,11 @@ namespace limxsdk {
       virtual bool setRobotLightEffect(int effect);
 
     protected:
-      std::function<void(const ImuDataConstPtr&)> imu_data_callback_{nullptr};  // Callback function for handling IMU data updates.
-      std::function<void(const RobotStateConstPtr&)> robot_state_callback_{nullptr};  // Callback function for handling robot state updates.
-      std::function<void(const RobotCmdConstPtr&)> robot_cmd_callback_{nullptr};  // Callback function for handling robot commands in simulation mode.
-      std::function<void(const SensorJoyConstPtr&)> sensor_joy_callback_{nullptr}; // Callback for handling joystick sensor inputs from the robot.
-      std::function<void(const DiagnosticValueConstPtr&)> diagnostic_callback_{nullptr}; // Callback for handling diagnostic values from the robot.
+      std::vector<std::function<void(const ImuDataConstPtr&)>> imu_data_callback_;  // Callback function for handling IMU data updates.
+      std::vector<std::function<void(const RobotStateConstPtr&)>> robot_state_callback_;  // Callback function for handling robot state updates.
+      std::vector<std::function<void(const RobotCmdConstPtr&)>> robot_cmd_callback_;  // Callback function for handling robot commands in simulation mode.
+      std::vector<std::function<void(const SensorJoyConstPtr&)>> sensor_joy_callback_; // Callback for handling joystick sensor inputs from the robot.
+      std::vector<std::function<void(const DiagnosticValueConstPtr&)>> diagnostic_callback_; // Callback for handling diagnostic values from the robot.
   };
 }
 
