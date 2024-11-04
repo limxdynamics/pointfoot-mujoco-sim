@@ -44,8 +44,15 @@ namespace limxsdk {
       /**
        * @brief Subscribe to the robot control command.
        * The motor order for the commnd data is as follows:
-       *        0: abad_L_joint,  1: hip_L_joint,  2: knee_L_joint
-       *        3: abad_R_joint,  4: hip_R_joint,  5: knee_R_joint
+       * PointFoot:
+       *   0: abad_L_Joint,  1: hip_L_Joint,  2: knee_L_Joint
+       *   3: abad_R_Joint,  4: hip_R_Joint,  5: knee_R_Joint
+       * BipedFoot:
+       *   0: abad_L_Joint,  1: hip_L_Joint,  2: knee_L_Joint,  3: ankle_L_Joint
+       *   4: abad_R_Joint,  5: hip_R_Joint,  6: knee_R_Joint,  7: ankle_R_Joint
+       * WheelFoot:
+       *   0: abad_L_Joint,  1: hip_L_Joint,  2: knee_L_Joint,  3: wheel_L_Joint
+       *   4: abad_R_Joint,  5: hip_R_Joint,  6: knee_R_Joint,  7: wheel_R_Joint
        * 
        * @param cb The callback function to be called when a control command is received.
        */
@@ -54,8 +61,15 @@ namespace limxsdk {
       /**
        * @brief Publish the robot state to the motion control algorithm.
        * The motor order for the state data is as follows:
-       *        0: abad_L_joint,  1: hip_L_joint,  2: knee_L_joint
-       *        3: abad_R_joint,  4: hip_R_joint,  5: knee_R_joint
+       * PointFoot:
+       *   0: abad_L_Joint,  1: hip_L_Joint,  2: knee_L_Joint
+       *   3: abad_R_Joint,  4: hip_R_Joint,  5: knee_R_Joint
+       * BipedFoot:
+       *   0: abad_L_Joint,  1: hip_L_Joint,  2: knee_L_Joint,  3: ankle_L_Joint
+       *   4: abad_R_Joint,  5: hip_R_Joint,  6: knee_R_Joint,  7: ankle_R_Joint
+       * WheelFoot:
+       *   0: abad_L_Joint,  1: hip_L_Joint,  2: knee_L_Joint,  3: wheel_L_Joint
+       *   4: abad_R_Joint,  5: hip_R_Joint,  6: knee_R_Joint,  7: wheel_R_Joint
        * 
        * @param state The robot state to be published.
        * @return True if publishing is successful, false otherwise.
