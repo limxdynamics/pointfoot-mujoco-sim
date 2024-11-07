@@ -138,9 +138,18 @@ if __name__ == '__main__':
     print(f"*** Model File Loaded: robot-description/pointfoot/{robot_type}/xml/robot.xml ***")
 
     # Define the names of the joint sensors used in the robot
-    joint_sensor_names = [
-        "abad_L_Joint", "hip_L_Joint", "knee_L_Joint", "abad_R_Joint", "hip_R_Joint", "knee_R_Joint"
-    ]
+    if robot_type.startswith("WF"):
+        joint_sensor_names = [
+            "abad_L_Joint", "hip_L_Joint", "knee_L_Joint", "wheel_L_Joint", "abad_R_Joint", "hip_R_Joint", "knee_R_Joint", "wheel_R_Joint"
+        ]
+    elif robot_type.startswith("SF"):
+        joint_sensor_names = [
+            "abad_L_Joint", "hip_L_Joint", "knee_L_Joint", "ankle_L_Joint", "abad_R_Joint", "hip_R_Joint", "knee_R_Joint", "ankle_R_Joint"
+        ]
+    else:
+        joint_sensor_names = [
+            "abad_L_Joint", "hip_L_Joint", "knee_L_Joint", "abad_R_Joint", "hip_R_Joint", "knee_R_Joint"
+        ]
 
     # Create and run the MuJoCo simulator instance
     simulator = SimulatorMujoco(model_path, joint_sensor_names, robot)
