@@ -121,8 +121,15 @@ if __name__ == '__main__':
     # Create a Robot instance of the PointFoot type
     robot = Robot(RobotType.PointFoot, True)
 
-    # Initialize the robot with the specified IP address
-    if not robot.init("127.0.0.1"):
+    # Default IP address for the robot
+    robot_ip = "127.0.0.1"
+    
+    # Check if command-line argument is provided for robot IP
+    if len(sys.argv) > 1:
+        robot_ip = sys.argv[1]
+
+    # Initialize the robot with the provided IP address
+    if not robot.init(robot_ip):
         sys.exit()
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
