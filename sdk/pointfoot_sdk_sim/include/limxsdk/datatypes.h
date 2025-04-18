@@ -54,18 +54,21 @@ namespace limxsdk {
     RobotState(int motor_num)
     : tau(motor_num, 0.0)
     , q(motor_num, 0.0)
-    , dq(motor_num, 0.0) { }
+    , dq(motor_num, 0.0)
+    , motor_names(motor_num, "") { }
 
     void resize(int motor_num) {
       tau.resize(motor_num, 0.0);
       q.resize(motor_num, 0.0);
       dq.resize(motor_num, 0.0);
+      motor_names.resize(motor_num, "");
     }
 
     uint64_t stamp;             // Timestamp in nanoseconds, typically represents the time when this data was recorded or generated.
     std::vector<float> tau;     // Vector to store the current estimated output torque (in Newton meters)
     std::vector<float> q;       // Vector to store the current angles (in radians)
     std::vector<float> dq;      // Vector to store the current velocities (in radians per second)
+    std::vector<std::string> motor_names;  // Vector storing the names of the motors
   };
   typedef std::shared_ptr<RobotState> RobotStatePtr;
   typedef std::shared_ptr<RobotState const> RobotStateConstPtr;
@@ -85,7 +88,8 @@ namespace limxsdk {
     , dq(motor_num, 0.0)
     , tau(motor_num, 0.0)
     , Kp(motor_num, 0.0)
-    , Kd(motor_num, 0.0) { }
+    , Kd(motor_num, 0.0)
+    , motor_names(motor_num, "") { }
 
     void resize(int motor_num) {
       mode.resize(motor_num, 0.0);
@@ -94,6 +98,7 @@ namespace limxsdk {
       tau.resize(motor_num, 0.0);
       Kp.resize(motor_num, 0.0);
       Kd.resize(motor_num, 0.0);
+      motor_names.resize(motor_num, "");
     }
 
     uint64_t stamp;             // Timestamp in nanoseconds, typically represents the time when this data was recorded or generated.
@@ -103,6 +108,7 @@ namespace limxsdk {
     std::vector<float> tau;     // Vector storing the desired output torque (in Newton meters).
     std::vector<float> Kp;      // Vector storing the desired position stiffness (in Newton meters per radian).
     std::vector<float> Kd;      // Vector storing the desired velocity stiffness (in Newton meters per radian per second).
+    std::vector<std::string> motor_names;   // Vector storing the names of the motors
   };     
   typedef std::shared_ptr<RobotCmd> RobotCmdPtr;
   typedef std::shared_ptr<RobotCmd const> RobotCmdConstPtr;  

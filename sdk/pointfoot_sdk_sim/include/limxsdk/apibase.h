@@ -42,6 +42,16 @@ namespace limxsdk {
       virtual uint32_t getMotorNumber();
 
       /**
+       * @brief Virtual method to obtain the names of all motors in the robot.
+       *
+       * This method is used to fetch a list of names corresponding to each motor in the robot.
+       * It can be overridden in derived classes to implement custom logic for getting the motor names.
+       *
+       * @return A vector containing the names of all motors in the robot.
+       */
+      virtual std::vector<std::string> getMotorNames();
+
+      /**
        * @brief Virtual method to subscribe to updates of the robot's IMU (Inertial Measurement Unit) data.
        * @param cb The callback function to be invoked when new IMU data is received.
        */
