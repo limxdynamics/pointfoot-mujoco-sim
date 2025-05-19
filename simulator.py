@@ -1,3 +1,7 @@
+# Copyright information
+#
+# © [2024] LimX Dynamics Technology Co., Ltd. All rights reserved.
+
 import os
 import sys
 import time
