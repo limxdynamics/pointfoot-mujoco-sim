@@ -1,10 +1,10 @@
 [submodule "robot-description"]
 	path = robot-description
 	url = https://github.com/limxdynamics/robot-description.git
-[submodule "pointfoot-sdk-lowlevel"]
-	path = pointfoot-sdk-lowlevel
-	url = https://github.com/limxdynamics/pointfoot-sdk-lowlevel.git
 [submodule "robot-joystick"]
 	path = robot-joystick
 	url = https://github.com/limxdynamics/robot-joystick.git
 	branch = main
+[submodule "limxsdk-lowlevel"]
+	path = limxsdk-lowlevel
+	url = https://github.com/limxdynamics/limxsdk-lowlevel.git
