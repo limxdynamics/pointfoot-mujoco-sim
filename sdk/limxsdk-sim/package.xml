@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>limxsdk_sim</name>
+  <version>0.0.0</version>
+  <description>limxsdk_sim</description>
+  <maintainer email="limx@limxdynamics.com">limxdynamics</maintainer>
+  <license>TODO</license>
+  <buildtool_depend    condition="$ROS_VERSION == 1">catkin</buildtool_depend>
+  <build_depend        condition="$ROS_VERSION == 1">roscpp</build_depend>
+  <build_export_depend condition="$ROS_VERSION == 1">roscpp</build_export_depend>
+  <exec_depend         condition="$ROS_VERSION == 1">roscpp</exec_depend>
+
+  <buildtool_depend    condition="$ROS_VERSION == 2">ament_cmake</buildtool_depend>
+  <build_depend        condition="$ROS_VERSION == 2">rclcpp</build_depend>
+  <build_export_depend condition="$ROS_VERSION == 2">rclcpp</build_export_depend>
+  <exec_depend         condition="$ROS_VERSION == 2">rclcpp</exec_depend>
+  <export>
+    <build_type condition="$ROS_VERSION == 1">catkin</build_type>
+    <build_type condition="$ROS_VERSION == 2">ament_cmake</build_type>
+  </export>
+</package>
