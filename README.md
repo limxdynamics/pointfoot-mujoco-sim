@@ -15,13 +15,13 @@
   - Linux x86_64 环境
 
     ```
-    pip install pointfoot-mujoco-sim/pointfoot-sdk-lowlevel/python3/amd64/limxsdk-*-py3-none-any.whl
+    pip install pointfoot-mujoco-sim/limxsdk-lowlevel/python3/amd64/limxsdk-*-py3-none-any.whl
     ```
 
   - Linux aarch64 环境
 
     ```
-    pip install pointfoot-mujoco-sim/pointfoot-sdk-lowlevel/python3/aarch64/limxsdk-*-py3-none-any.whl
+    pip install pointfoot-mujoco-sim/limxsdk-lowlevel/python3/aarch64/limxsdk-*-py3-none-any.whl
     ```
 
 - 设置机器人类型
@@ -67,7 +67,7 @@
 - 编译控制器 SDK 示例：
 
   ```
-  cd pointfoot-mujoco-sim/pointfoot-sdk-lowlevel
+  cd pointfoot-mujoco-sim/limxsdk-lowlevel
   mkdir -p build
   cd build
   cmake ..
