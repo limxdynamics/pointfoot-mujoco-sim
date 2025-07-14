@@ -1,85 +1,88 @@
-# pointfoot-mujoco-sim
+# English | [中文](README_cn.md)
+# pointfoot-mujoco-sim Usage Guide
 
-## 1. 运行仿真
+## 1. Run the Simulation
 
-- 打开一个 Bash 终端。
+### Step 1: Open a terminal
 
-- 下载 MuJoCo 仿真器代码：
+### Step 2: Clone the MuJoCo simulation code
 
-  ```
-  git clone --recurse https://github.com/limxdynamics/pointfoot-mujoco-sim.git
-  ```
+```bash
+git clone --recurse https://github.com/limxdynamics/pointfoot-mujoco-sim.git
+```
 
-- 安装运动控制开发库：
+### Step 3: Install the motion control SDK
 
-  - Linux x86_64 环境
+#### For Linux x86_64:
 
-    ```
-    pip install pointfoot-mujoco-sim/limxsdk-lowlevel/python3/amd64/limxsdk-*-py3-none-any.whl
-    ```
+```bash
+pip install pointfoot-mujoco-sim/limxsdk-lowlevel/python3/amd64/limxsdk-*-py3-none-any.whl
+```
 
-  - Linux aarch64 环境
+#### For Linux aarch64:
 
-    ```
-    pip install pointfoot-mujoco-sim/limxsdk-lowlevel/python3/aarch64/limxsdk-*-py3-none-any.whl
-    ```
+```bash
+pip install pointfoot-mujoco-sim/limxsdk-lowlevel/python3/aarch64/limxsdk-*-py3-none-any.whl
+```
 
-- 设置机器人类型
+### Step 4: Set Robot Type
 
-  - 通过 Shell 命令 `tree -L 1 pointfoot-mujoco-sim/robot-description/pointfoot` 列出可用的机器人类型：
+Use the following shell command to list available robot types:
 
-    ```
-    limx@limx:~$ tree -L 1 pointfoot-mujoco-sim/robot-description/pointfoot
-    pointfoot-mujoco-sim/robot-description/pointfoot
-    ├── PF_P441A
-    ├── PF_P441B
-    ├── PF_P441C
-    ├── PF_P441C2
-    ├── PF_TRON1A
-    ├── SF_TRON1A
-    └── WF_TRON1A
+```bash
+tree -L 1 pointfoot-mujoco-sim/robot-description/pointfoot
+```
 
-    ```
+Example output:
 
-  - 以`PF_P441C`（请根据实际机器人类型进行替换）为例，设置机器人型号类型：
+```
+pointfoot-mujoco-sim/robot-description/pointfoot
+├── PF_P441A
+├── PF_P441B
+├── PF_P441C
+├── PF_P441C2
+├── PF_TRON1A
+├── SF_TRON1A
+└── WF_TRON1A
+```
 
-    ```
-    echo 'export ROBOT_TYPE=PF_P441C' >> ~/.bashrc && source ~/.bashrc
-    ```
+Take `PF_P441C` as an example (replace it with your actual robot type):
 
-- 运行 MuJoCo 仿真器：
+```bash
+echo 'export ROBOT_TYPE=PF_P441C' >> ~/.bashrc && source ~/.bashrc
+```
 
-  ```
-  python pointfoot-mujoco-sim/simulator.py
-  ```
+### Step 5: Run the MuJoCo simulator
 
-## 2. 编译运行控制
+```bash
+python pointfoot-mujoco-sim/simulator.py
+```
 
-- 打开一个 Bash 终端。
+---
 
-- 安装编译所需环境
+## 2. Compile and Run the Controller
 
-  ```
-  sudo apt update
-  sudo apt install -y cmake build-essential
-  ```
+### Step 1: Open a terminal
 
-- 编译控制器 SDK 示例：
+### Step 2: Install required build tools
 
-  ```
-  cd pointfoot-mujoco-sim/limxsdk-lowlevel
-  mkdir -p build
-  cd build
-  cmake ..
-  make
-  ```
+```bash
+sudo apt update
+sudo apt install -y cmake build-essential
+```
 
-- 运行控制器 SDK 示例：
+### Step 3: Compile the SDK example controller
 
-  ```
-  ./examples/pf_groupJoints_move
-  ```
+```bash
+cd pointfoot-mujoco-sim/limxsdk-lowlevel
+mkdir -p build
+cd build
+cmake ..
+make
+```
 
-## 3. 仿真展示
+### Step 4: Run the example controller
 
-![](doc/simulator.gif)
+```bash
+./examples/pf_groupJoints_move
+```
