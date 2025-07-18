@@ -39,16 +39,6 @@ namespace limxsdk
 
     /**
      * @brief Subscribe to the robot control command.
-     * The motor order for the commnd data is as follows:
-     * Humanoid:
-     *   0: left_hip_pitch_joint,   1: left_hip_roll_joint,   2: left_hip_yaw_joint  3: left_knee_joint  4: left_ankle_pitch_joint   5: left_ankle_roll_joint
-     *   6: right_hip_pitch_joint,  7: right_hip_roll_joint,  8: right_hip_yaw_joint 9: right_knee_joint 10: right_ankle_pitch_joint 11: right_ankle_roll_joint
-     *  12: waist_yaw_joint,       13: waist_roll_joint,     14: waist_pitch_joint,
-     *  15: head_pitch_joint,      16: head_yaw_joint
-     *  17: left_shoulder_pitch_joint,  18: left_shoulder_roll_joint,  19: left_shoulder_yaw_joint  20: left_elbow_joint
-     *  21: left_hand_yaw_joint,  22: left_hand_roll_joint,  23: left_hand_pitch_joint
-     *  24: right_shoulder_pitch_joint,  25: right_shoulder_roll_joint,  26: right_shoulder_yaw_joint,  27: right_elbow_joint
-     *  28: right_hand_yaw_joint,  29: right_hand_roll_joint,  30: right_hand_pitch_joint
      *
      * @param cb The callback function to be called when a control command is received.
      */
@@ -56,16 +46,6 @@ namespace limxsdk
 
     /**
      * @brief Publish the robot state to the motion control algorithm.
-     * The motor order for the state data is as follows:
-     * Humanoid:
-     *   0: left_hip_pitch_joint,   1: left_hip_roll_joint,   2: left_hip_yaw_joint  3: left_knee_joint  4: left_ankle_pitch_joint   5: left_ankle_roll_joint
-     *   6: right_hip_pitch_joint,  7: right_hip_roll_joint,  8: right_hip_yaw_joint 9: right_knee_joint 10: right_ankle_pitch_joint 11: right_ankle_roll_joint
-     *  12: waist_yaw_joint,       13: waist_roll_joint,     14: waist_pitch_joint,
-     *  15: head_pitch_joint,      16: head_yaw_joint
-     *  17: left_shoulder_pitch_joint,  18: left_shoulder_roll_joint,  19: left_shoulder_yaw_joint  20: left_elbow_joint
-     *  21: left_hand_yaw_joint,  22: left_hand_roll_joint,  23: left_hand_pitch_joint
-     *  24: right_shoulder_pitch_joint,  25: right_shoulder_roll_joint,  26: right_shoulder_yaw_joint,  27: right_elbow_joint
-     *  28: right_hand_yaw_joint,  29: right_hand_roll_joint,  30: right_hand_pitch_joint
      *
      * @param state The robot state to be published.
      * @return True if publishing is successful, false otherwise.

@@ -79,13 +79,6 @@ namespace limxsdk
     bool publishRobotStateForSim(const RobotState &state) override;
 
     /**
-     * @brief Subscribes to the robot's state for visualization purposes.
-     *
-     * @param cb The callback function to handle the robot state data.
-     */
-    void subscribeRobotStateForVis(std::function<void(const RobotStateConstPtr &)> cb);
-
-    /**
      * @brief Publishes IMU (Inertial Measurement Unit) data to the motion control algorithm for simulation.
      * The order of IMU data is as follows:
      *        Accelerometer: imu.acc
