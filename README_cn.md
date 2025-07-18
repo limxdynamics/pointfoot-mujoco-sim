@@ -1,5 +1,5 @@
 # 中文 | [English](README.md)
-# pointfoot-mujoco-sim
+# tron1-mujoco-sim
 
 ## 1. 运行仿真
 
@@ -8,7 +8,7 @@
 - 下载 MuJoCo 仿真器代码：
 
   ```
-  git clone --recurse https://github.com/limxdynamics/pointfoot-mujoco-sim.git
+  git clone --recurse https://github.com/limxdynamics/tron1-mujoco-sim.git
   ```
 
 - 安装运动控制开发库：
@@ -16,22 +16,22 @@
   - Linux x86_64 环境
 
     ```
-    pip install pointfoot-mujoco-sim/limxsdk-lowlevel/python3/amd64/limxsdk-*-py3-none-any.whl
+    pip install tron1-mujoco-sim/limxsdk-lowlevel/python3/amd64/limxsdk-*-py3-none-any.whl
     ```
 
   - Linux aarch64 环境
 
     ```
-    pip install pointfoot-mujoco-sim/limxsdk-lowlevel/python3/aarch64/limxsdk-*-py3-none-any.whl
+    pip install tron1-mujoco-sim/limxsdk-lowlevel/python3/aarch64/limxsdk-*-py3-none-any.whl
     ```
 
 - 设置机器人类型
 
-  - 通过 Shell 命令 `tree -L 1 pointfoot-mujoco-sim/robot-description/pointfoot` 列出可用的机器人类型：
+  - 通过 Shell 命令 `tree -L 1 tron1-mujoco-sim/robot-description/pointfoot` 列出可用的机器人类型：
 
     ```
-    limx@limx:~$ tree -L 1 pointfoot-mujoco-sim/robot-description/pointfoot
-    pointfoot-mujoco-sim/robot-description/pointfoot
+    limx@limx:~$ tree -L 1 tron1-mujoco-sim/robot-description/pointfoot
+    tron1-mujoco-sim/robot-description/pointfoot
     ├── PF_P441A
     ├── PF_P441B
     ├── PF_P441C
@@ -51,7 +51,7 @@
 - 运行 MuJoCo 仿真器：
 
   ```
-  python pointfoot-mujoco-sim/simulator.py
+  python tron1-mujoco-sim/simulator.py
   ```
 
 ## 2. 编译运行控制
@@ -68,7 +68,7 @@
 - 编译控制器 SDK 示例：
 
   ```
-  cd pointfoot-mujoco-sim/limxsdk-lowlevel
+  cd tron1-mujoco-sim/limxsdk-lowlevel
   mkdir -p build
   cd build
   cmake ..

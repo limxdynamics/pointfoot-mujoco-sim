@@ -1,5 +1,5 @@
 # English | [中文](README_cn.md)
-# pointfoot-mujoco-sim Usage Guide
+# tron1-mujoco-sim Usage Guide
 
 ## 1. Run the Simulation
 
@@ -8,7 +8,7 @@
 ### Step 2: Clone the MuJoCo simulation code
 
 ```bash
-git clone --recurse https://github.com/limxdynamics/pointfoot-mujoco-sim.git
+git clone --recurse https://github.com/limxdynamics/tron1-mujoco-sim.git
 ```
 
 ### Step 3: Install the motion control SDK
@@ -16,13 +16,13 @@ git clone --recurse https://github.com/limxdynamics/pointfoot-mujoco-sim.git
 #### For Linux x86_64:
 
 ```bash
-pip install pointfoot-mujoco-sim/limxsdk-lowlevel/python3/amd64/limxsdk-*-py3-none-any.whl
+pip install tron1-mujoco-sim/limxsdk-lowlevel/python3/amd64/limxsdk-*-py3-none-any.whl
 ```
 
 #### For Linux aarch64:
 
 ```bash
-pip install pointfoot-mujoco-sim/limxsdk-lowlevel/python3/aarch64/limxsdk-*-py3-none-any.whl
+pip install tron1-mujoco-sim/limxsdk-lowlevel/python3/aarch64/limxsdk-*-py3-none-any.whl
 ```
 
 ### Step 4: Set Robot Type
@@ -30,13 +30,13 @@ pip install pointfoot-mujoco-sim/limxsdk-lowlevel/python3/aarch64/limxsdk-*-py3-
 Use the following shell command to list available robot types:
 
 ```bash
-tree -L 1 pointfoot-mujoco-sim/robot-description/pointfoot
+tree -L 1 tron1-mujoco-sim/robot-description/pointfoot
 ```
 
 Example output:
 
 ```
-pointfoot-mujoco-sim/robot-description/pointfoot
+tron1-mujoco-sim/robot-description/pointfoot
 ├── PF_P441A
 ├── PF_P441B
 ├── PF_P441C
@@ -55,7 +55,7 @@ echo 'export ROBOT_TYPE=PF_P441C' >> ~/.bashrc && source ~/.bashrc
 ### Step 5: Run the MuJoCo simulator
 
 ```bash
-python pointfoot-mujoco-sim/simulator.py
+python tron1-mujoco-sim/simulator.py
 ```
 
 ---
@@ -74,7 +74,7 @@ sudo apt install -y cmake build-essential
 ### Step 3: Compile the SDK example controller
 
 ```bash
-cd pointfoot-mujoco-sim/limxsdk-lowlevel
+cd tron1-mujoco-sim/limxsdk-lowlevel
 mkdir -p build
 cd build
 cmake ..
